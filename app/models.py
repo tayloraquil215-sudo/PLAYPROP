@@ -9,6 +9,7 @@ class Pick(Base):
     __tablename__ = "picks"
 
     id = Column(String, primary_key=True, default=uid)
+    bet_type = Column(String)  # straight or parlay
     player = Column(String)
     market = Column(String)
     line = Column(Float)
