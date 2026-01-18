@@ -3,14 +3,14 @@ from models import PlayerStat
 
 db = SessionLocal()
 
-stats = [
-    {"player":"LeBron James","stat":"Career PPG","value":27.1},
-    {"player":"LeBron James","stat":"Career APG","value":7.4},
-    {"player":"LeBron James","stat":"Career RPG","value":7.5},
+players = [
+    {"player": "LeBron James", "stat": "Career PPG", "value": 27.1},
+    {"player": "LeBron James", "stat": "Career RPG", "value": 7.5},
+    {"player": "Stephen Curry", "stat": "Career 3PT%", "value": 42.8},
 ]
 
-for s in stats:
-    db.add(PlayerStat(**s))
+for p in players:
+    db.add(PlayerStat(**p))
 
 db.commit()
 db.close()
