@@ -28,8 +28,8 @@ def history(db: Session = Depends(get_db)):
 
 @router.get("/stats")
 def stats(db: Session = Depends(get_db)):
-    wins = db.query(Pick).filter(Pick.result=="win").count()
-    losses = db.query(Pick).filter(Pick.result=="loss").count()
+    wins = db.query(Pick).filter(Pick.result == "win").count()
+    losses = db.query(Pick).filter(Pick.result == "loss").count()
     return {"wins": wins, "losses": losses}
 
 @router.get("/players/{name}")
